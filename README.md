@@ -1,44 +1,61 @@
-# 🚀 AI-Powered Recommendation System using Endee
+# 🎬 End-to-End Movie Recommendation System
 
 ## 📌 Overview
-This project is an AI-based recommendation system that uses **Endee** as a vector database to provide intelligent and context-aware recommendations.
+This project is a **User-Based Collaborative Filtering Recommendation System** built using Python and Streamlit.  
+It recommends movies to users based on the preferences of similar users.
 
-The system converts items (such as movies, products, or learning resources) into vector embeddings and stores them in Endee. When a user provides input, the system performs semantic similarity search to recommend the most relevant items.
-
-This project demonstrates how vector databases can be used in real-world AI applications like recommendation systems.
-
----
-
-## 🎯 Features
-- 🔍 Semantic similarity-based recommendations
-- ⚡ Fast vector search using Endee
-- 🧠 AI-powered intelligent suggestions
-- 📂 Custom dataset support
-- 💡 Easy to extend and modify
+The system uses **cosine similarity** to identify users with similar tastes and suggests movies they liked.
 
 ---
 
-## 🛠️ Tech Stack
-- Python
-- Endee (Vector Database)
-- Machine Learning / Embeddings
-- (Optional) OpenAI / Sentence Transformers
-- GitHub for version control
+## 🚀 Features
+- User-Based Collaborative Filtering  
+- Cosine Similarity for user comparison  
+- Interactive UI using Streamlit  
+- Evaluation metrics (Precision & Recall)  
+- Clean and modular project structure  
 
 ---
 
-## 🏗️ System Architecture
-
-User Input  
-   ↓  
-Convert to Vector (Embedding)  
-   ↓  
-Search in Endee (Vector DB)  
-   ↓  
-Retrieve Similar Items  
-   ↓  
-Display Recommendations  
+## 🧠 How It Works
+1. Create a **user-item matrix** from ratings data  
+2. Compute similarity between users using cosine similarity  
+3. Identify most similar users  
+4. Recommend movies liked by similar users but not watched by the target user  
 
 ---
 
-## 📂 Project Structure
+## 📊 Dataset
+The dataset contains user ratings for movies:
+
+| user_id | movie_title | rating |
+|--------|------------|--------|
+| 1 | Inception | 5 |
+| 2 | Avengers | 4 |
+
+You can replace this dataset with larger datasets like MovieLens for better results.
+
+---
+
+## 📁 Project Structure
+endee-recommendation-system/
+│
+├── data/
+│   └── ratings.csv
+│
+├── recommender.py
+├── evaluate.py
+├── app.py
+├── requirements.txt
+└── README.md
+
+## ⚙️ Installation & Run
+
+### 1. Install dependencies
+pip install -r requirements.txt
+
+### 2. Run the app
+streamlit run app.py
+
+### 3. Open in browser
+http://localhost:8501
