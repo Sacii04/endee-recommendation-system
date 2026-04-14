@@ -36,5 +36,4 @@ pip install -r requirements.txt
 ## ▶️ Run
 python app.py
 
-## 🎯 Resume Highlight
 Built an AI-powered hybrid recommendation system using semantic search and RAG.
